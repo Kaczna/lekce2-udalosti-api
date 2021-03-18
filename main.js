@@ -16,16 +16,15 @@ function ztucni() {
     // Domácí úkol 2: přidej tlačítko “větší po kliknutí”, které písmo zvětší o jeden pixel oproti jeho aktuální velikost.
     
     function vetsiPismo() {
+
+        
         let odstavec=document.querySelector('#js-paragraph');
-        odstavec.classList.add("pismo")
-    }
-    
-    // Jak by se, prosím, dalo udělat, aby se písmo při každém dalším kliku zvětšilo o 1px? Nějak podobně jako níže nebo je to nesmysl? Díky.
-    // function vetsiPismo() {
-    //     let odstavec=document.querySelector('#js-paragraph');
-    //     let velikostPisma = 16;
-    //     odstavec.style.fontSize = velikostPisma + 'px'
-    // }
+        let style = window.getComputedStyle(odstavec, null).getPropertyValue('font-size') 
+        let currentSize = parseInt(style);
+        currentSize++;
+        odstavec.style.fontSize = currentSize.toString() + 'px';
+      
+        }
     
 
 
